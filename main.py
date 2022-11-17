@@ -5,9 +5,17 @@ app = Flask(__name__)
 @app.route('/')
 def home_page():
     """
-    Displays the homepage with forms for weather data.
+    Displays the homepage for starwars app
     """
-    pass
+    return render_template('home.html')
+
+
+@app.route('/char')
+def character_page():
+    """
+    Displays the the character page for SWAPI
+    """
+    return render_template('char.html')
 
 
 if __name__ == '__main__':

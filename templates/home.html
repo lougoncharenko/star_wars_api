@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+<p>All the Star Wars data you've ever wanted:</p>
+<p><b>Planets, Spaceships, Vehicles, People, Films and Species</b></p>
+<p>From all <b>SEVEN</b> Star Wars films</p>
+<p><h4>Now with The Force Awakens data!</h4></p>
+</div>
+
+<div class="input-group">
+    <span class="input-group-addon">https://swapi.py4e.com/api/</span>
+    <input id="interactive" type="text" class="form-control" placeholder="people/1/">
+    <span class="input-group-btn"><button onClick="interactive_call();return false;" class="btn btn-primary">request</button></span>
+  </div>
+
+  <div id="display">
+
+  </div>
+{% endblock %}  
