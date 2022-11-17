@@ -1,11 +1,13 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-06.jpg');
+    background-blend-mode: hue;
 }
 
 #header_photo{
     background-image: url('https://coolthemestores.com/wp-content/uploads/2021/05/star-wars-chrome-wallpaper.jpg');
-    height:400px;
+    height:350px;
 }
 
 #title {
@@ -48,5 +50,23 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
 
+
+  button {
+    background-color: yellow;
+    border-radius: 50px;
+    color: black;
+    padding:10px;
+    font-size: 15px;
+  }
+
+  button:hover{
+    background-color: black;
+    color: yellow;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: bold;
   }
