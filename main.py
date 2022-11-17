@@ -19,8 +19,6 @@ def character_page():
     number = random.randint(1, 88)
     response = requests.get(f"https://swapi.py4e.com/api/people/{number}/")
     data = response.json()
-    print(data)
-
     context = {
     "character": data
     }
@@ -40,7 +38,13 @@ def planet_page():
     """
     Displays the planet page for SWAPI
     """
-    return render_template('planets.html')
+    number = random.randint(1, 62)
+    response = requests.get(f"https://swapi.py4e.com/api/planets/{number}/")
+    data = response.json()
+    context = {
+    "planet": data
+    }
+    return render_template('planets.html', **context)
 
 @app.route('/vehicles')
 def vehicle_page():
