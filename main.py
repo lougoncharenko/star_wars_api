@@ -1,4 +1,5 @@
 import requests
+import json
 from flask import Flask, render_template, request, send_file
 import random
 app = Flask(__name__)
@@ -15,22 +16,16 @@ def character_page():
     """
     Displays the the character page for SWAPI
     """
-    if request.method == 'POST':
-        number = random.randint(1, 88)
-        response = requests.get(f"https://swapi.py4e.com/api/people/{number}/")
-        data = response.json()
+    number = random.randint(1, 88)
+    response = requests.get(f"https://swapi.py4e.com/api/people/{number}/")
+    data = response.json()
+    print(data)
 
-        context = {
-           "name" : data,
-           "height": data,
-           "skin": data,
-           "eye_color": data,
-           "birth_year": data,
-           "gender": data,
-        }
-        return render_template('char.html', **context)
-    else:   
-        return render_template('char.html')
+    context = {
+    "character": data
+    }
+    return render_template('char.html', **context)
+    
 
 
 @app.route('/films')
