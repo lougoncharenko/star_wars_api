@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Explore Star Wars Characters!</h2>
-<div class="input-group">
-    <span class="input-group-addon">https://swapi.py4e.com/api/</span>
-    <input id="interactive" name ="people_input" type="text" class="form-control" placeholder="people/1/">
-    <span class="input-group-btn"><button onClick="interactive_call();return false;" class="btn btn-primary">request</button></span>
-  </div>
-
+<section id = 'character_section'>
+  <h2>Explore Star Wars Characters!</h2>
+    <a href="http://127.0.0.1:3000/char">
+          <button >Click here to Randomize a Character </button>
+    </a>
   <div id="display">
-    <p>Name: {{name.name}}</p>
-    <p>Height: {{height.height}}</p>
-    <p>Skin Color: {{skin.skin_color}}</p>
-    <p> Eye Color: {{eye_color.eye_color}}</p>
-    <p>Birth Year: {{birth_year.birth_year}}</p>
-    <p>Gender: {{gender.gender}}</p>
-
+    <p>Name: {{character.name}}</p>
+    <p>Height: {{character.height}}</p>
+    <p>Skin Color: {{character.skin_color}}</p>
+    <p> Eye Color: {{character.eye_color}}</p>
+    <p>Birth Year: {{character.birth_year}}</p>
+    <p>Gender: {{character.gender}}</p>
+</section>
   </div>
 {% endblock %}  
