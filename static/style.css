@@ -8,6 +8,13 @@ body{
     height:400px;
 }
 
+#title {
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px yellow, 0 0 1em black, 0 0 0.2em yellow;
+
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -34,4 +41,12 @@ ul {
   /* Change the link color to #111 (black) on hover */
   li a:hover {
     background-color: rgb(47, 46, 46);
+  }
+
+  #container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
   }
