@@ -9,13 +9,33 @@ def home_page():
     """
     return render_template('home.html')
 
-
 @app.route('/char')
 def character_page():
     """
     Displays the the character page for SWAPI
     """
     return render_template('char.html')
+
+@app.route('/films')
+def film_page():
+    """
+    Displays the film page for SWAPI
+    """
+    return render_template('film.html')
+
+@app.route('/planets')
+def planet_page():
+    """
+    Displays the planet page for SWAPI
+    """
+    return render_template('planets.html')
+
+@app.route('/vehicles')
+def vehicle_page():
+    """
+    Displays the vehicle page for SWAPI
+    """
+    return render_template('vehicles.html')
 
 
 if __name__ == '__main__':
