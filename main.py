@@ -15,13 +15,23 @@ def character_page():
     Displays the the character page for SWAPI
     """
     return render_template('char.html')
+    if request.method == 'POST':
+        people = ''
+        number= ''
+        response = requests.get(f"https://swapi.py4e.com/api/{people}/{number}/")
+        data = response.json()
+
+        context = {
+            
+        }
+
 
 @app.route('/films')
 def film_page():
     """
     Displays the film page for SWAPI
     """
-    return render_template('film.html')
+    return render_template('films.html')
 
 @app.route('/planets')
 def planet_page():
