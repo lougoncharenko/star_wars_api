@@ -31,7 +31,13 @@ def film_page():
     """
     Displays the film page for SWAPI
     """
-    return render_template('films.html')
+    number = random.randint(1, 7)
+    response = requests.get(f"https://swapi.py4e.com/api/films/{number}/")
+    data = response.json()
+    context = {
+    "film": data
+    }
+    return render_template('films.html', **context)
 
 @app.route('/planets')
 def planet_page():
@@ -42,7 +48,7 @@ def planet_page():
     response = requests.get(f"https://swapi.py4e.com/api/planets/{number}/")
     data = response.json()
     context = {
-    "planet": data
+    "planet": data,
     }
     return render_template('planets.html', **context)
 
@@ -51,7 +57,13 @@ def vehicle_page():
     """
     Displays the vehicle page for SWAPI
     """
-    return render_template('vehicles.html')
+    number = random.randint(1, 7)
+    response = requests.get(f"https://swapi.py4e.com/api/vehicles/{number}/")
+    data = response.json()
+    context = {
+    "vehicle": data,
+    }
+    return render_template('vehicles.html', **context)
 
 
 if __name__ == '__main__':

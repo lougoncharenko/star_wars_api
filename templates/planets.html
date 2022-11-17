@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Explore Star Wars Planets!</h2>
 <div class="input-group">
+  <a href="http://127.0.0.1:3000/planets">
     <span class="input-group-btn"><button>Generate A Random Planet</button></span>
+  </a>
   </div>
 
   <div id="display">
@@ -12,11 +13,5 @@
     <p>Climate: {{planet.climate}}</p>
     <p>Terrain: {{planet.terrain}}</p>
     <p>Population: {{planet.population}}</p>
-    <p>Residents: </p>
-    <ul>
-      {% for resident in planet.residents %}
-         <li> {{ resident.name }} </li>
-      {% endfor %}
-      </ul>
   </div>
 {% endblock %}  

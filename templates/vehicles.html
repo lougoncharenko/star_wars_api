@@ -2,12 +2,19 @@
 {% block content %}
 <h2>Explore Star Wars Vehicles and Spaceships!</h2>
 <div class="input-group">
-    <span class="input-group-addon">https://swapi.py4e.com/api/</span>
-    <input id="interactive" type="text" class="form-control" placeholder="planets/1/">
-    <span class="input-group-btn"><button>request</button></span>
+  <a href="http://127.0.0.1:3000/vehicles">
+    <span class="input-group-btn"><button>Generate A Random Vehicle</button></span>
+  </a>
   </div>
 
   <div id="display">
+    <p>Vehicle Name: {{vehicle.name}}</p>
+    <p>Model: {{vehicle.model}}</p>
+    <p>Manufacturer: {{vehicle.manufacturer}}</p>
+    <p>Cost in credits: {{vehicle.cost_in_credits}}</p>
+    <p>Number of Crew: {{vehicle.crew}}</p>
+    <p>Number of passengers: {{vehicle.passengers}}</p>
+    <p>Consumables: {{vehicle.consumables}}</p>
 
   </div>
 {% endblock %}  

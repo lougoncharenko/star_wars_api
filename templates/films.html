@@ -2,12 +2,12 @@
 {% block content %}
 <h2>Explore Star Wars Films!</h2>
 <div class="input-group">
-    <span class="input-group-addon">https://swapi.py4e.com/api/</span>
-    <input id="interactive" type="text" class="form-control" placeholder="films/1/">
-    <span class="input-group-btn"><button>Request</button></span>
   </div>
 
   <div id="display">
-
+    <p>Movie Title: {{film.title}}</p>
+    <p>Director: {{film.director}}</p>
+    <p>Producer: {{film.producer}}</p>
+    <p>Release Date: {{film.release_date}}</p>
   </div>
 {% endblock %}  
