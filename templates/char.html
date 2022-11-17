@@ -3,11 +3,17 @@
 <h2>Explore Star Wars Characters!</h2>
 <div class="input-group">
     <span class="input-group-addon">https://swapi.py4e.com/api/</span>
-    <input id="interactive" type="text" class="form-control" placeholder="people/1/">
+    <input id="interactive" name ="people_input" type="text" class="form-control" placeholder="people/1/">
     <span class="input-group-btn"><button onClick="interactive_call();return false;" class="btn btn-primary">request</button></span>
   </div>
 
   <div id="display">
+    <p>Name: {{name.name}}</p>
+    <p>Height: {{height.height}}</p>
+    <p>Skin Color: {{skin.skin_color}}</p>
+    <p> Eye Color: {{eye_color.eye_color}}</p>
+    <p>Birth Year: {{birth_year.birth_year}}</p>
+    <p>Gender: {{gender.gender}}</p>
 
   </div>
 {% endblock %}  
