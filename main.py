@@ -1,5 +1,6 @@
 import requests
 from flask import Flask, render_template, request, send_file
+import random
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,21 +10,27 @@ def home_page():
     """
     return render_template('home.html')
 
-@app.route('/char')
+@app.route('/char', methods=['GET', 'POST'])
 def character_page():
     """
     Displays the the character page for SWAPI
     """
-    return render_template('char.html')
     if request.method == 'POST':
-        people = ''
-        number= ''
-        response = requests.get(f"https://swapi.py4e.com/api/{people}/{number}/")
+        number = random.randint(1, 88)
+        response = requests.get(f"https://swapi.py4e.com/api/people/{number}/")
         data = response.json()
 
         context = {
-            
+           "name" : data,
+           "height": data,
+           "skin": data,
+           "eye_color": data,
+           "birth_year": data,
+           "gender": data,
         }
+        return render_template('char.html', **context)
+    else:   
+        return render_template('char.html')
 
 
 @app.route('/films')
