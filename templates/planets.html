@@ -2,12 +2,21 @@
 {% block content %}
 <h2>Explore Star Wars Planets!</h2>
 <div class="input-group">
-    <span class="input-group-addon">https://swapi.py4e.com/api/</span>
-    <input id="interactive" type="text" class="form-control" placeholder="planets/1/">
-    <span class="input-group-btn"><button>request</button></span>
+    <span class="input-group-btn"><button>Generate A Random Planet</button></span>
   </div>
 
   <div id="display">
-
+    <p>Planet Name: {{planet.name}}</p>
+    <p>Rotation Period: {{planet.rotation_period}}</p>
+    <p>Diameter: {{planet.diameter}}</p>
+    <p>Climate: {{planet.climate}}</p>
+    <p>Terrain: {{planet.terrain}}</p>
+    <p>Population: {{planet.population}}</p>
+    <p>Residents: </p>
+    <ul>
+      {% for resident in planet.residents %}
+         <li> {{ resident.name }} </li>
+      {% endfor %}
+      </ul>
   </div>
 {% endblock %}  
