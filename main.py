@@ -28,11 +28,19 @@ def character_page():
     try:
         films = [requests.get(film).json()['title'] for film in character_data['films']]
     except KeyError:
-        print('KeyError: Setting films to N/A')
+        print('KeyError: Films Not Found')
         films = ['N/A']
     
+    try:
+        character_name = character_data['name']
+    except KeyError:
+        print('KeyError: Character Not Found')
+        character_name = 'sad'
+
     context = {
-    "character": data
+    "character": character_data,
+    'films': films,
+    'gifs': gifs
     }
     return render_template('char.html', **context)
     
