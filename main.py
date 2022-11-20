@@ -23,7 +23,14 @@ def character_page():
     if not character_id:
         character_id = '1'
     response = requests.get(f"https://swapi.py4e.com/api/people/{character_id}/")
-    data = response.json()
+    character_data = response.json()
+
+    try:
+        films = [requests.get(film).json()['title'] for film in character_data['films']]
+    except KeyError:
+        print('KeyError: Setting films to N/A')
+        films = ['N/A']
+    
     context = {
     "character": data
     }
