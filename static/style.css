@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url('https://i.redd.it/enyorw152if51.jpg');
+    background-image: url('https://thumbs.dreamstime.com/b/d-rendering-elements-image-furnished-spaceship-white-interior-tunnel-corridor-hallway-elements-image-furnished-130657887.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,4 +74,16 @@ ul {
     font-weight: bold;
     text-shadow: 1px 1px 2px rgb(250, 247, 247);
 
+  }
+
+  li {
+    margin: 10px 10px;
+    list-style-type:circle
+  }
+
+  #film-list{
+    color: white;
+  background-color: rgb(22, 22, 22);
+  border: solid 8px rgb(225, 160, 7);
+  margin: 0 1em;
   }

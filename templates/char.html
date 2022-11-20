@@ -3,7 +3,7 @@
 
 <fieldset>
   <legend>Character Search</legend>
-  <form action="/" method="GET">
+  <form action="/char" method="GET">
     <label for="character-search">
       Type in a number for a Star Wars Character
     </label>
@@ -23,15 +23,16 @@
     <p> Eye Color: {{character.eye_color}}</p>
     <p>Birth Year: {{character.birth_year}}</p>
     <p>Gender: {{character.gender}}</p>
-  </div>
-  <section>
-    <h3>List of films:</h3>
-    <ul class="information-box">
-      {% for film in films %}
-      <li>{{film}}</li>
-      {% endfor %}
-    </ul>
-  </section>
+</div>
+<div>
+  <img id="main-gif" src="{{gifs[0]['media_formats']['gif']['url']}}" alt="GIF">
+</div>
 </section>
+<h3>List of films:</h3>
+<ul id ='film-list'>
+  {% for film in films %}
+  <li>{{film}}</li>
+  {% endfor %}
+</ul>
 
 {% endblock %}  

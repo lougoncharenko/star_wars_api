@@ -36,7 +36,7 @@ def character_page():
         character_name = character_data['name']
     except KeyError:
         print('KeyError: Character Not Found')
-        character_name = 'sad'
+        character_name = 'star wars'
     response = requests.get(
         f"https://tenor.googleapis.com/v2/search?q={character_name}&key={apikey}&limit={limit}")
     gifs = json.loads(response.content).get('results')
