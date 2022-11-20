@@ -29,3 +29,28 @@ Star_Wars_Api/
 ├── templates # Directory for reusable HTML templates
 ├── main.py        # File that runs the flask server to create routes and run applications 
 ```
+
+<br>
+<br>
+
+<!-- CONTRIBUTING -->
+## Contributing
+Contributions are always greatly appreciated as coding is all about refactoring and improving your code. My project is set to public and I am more than happy to accept all contributions. 
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. 
+Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b newFeature`)
+3. Commit your Changes (`git commit -m 'Adding some new features'`)
+4. Push to the Branch (`git push origin newFeature`)
+5. Open a Pull Request
+
+
+<br>
+<br>
+
+<!-- CONTACT -->
+## Contact
+
+Email- louisa.goncharenko@students.dominican.edu
