@@ -5,8 +5,7 @@ import json
 from flask import Flask, render_template, request, send_file
 import random
 app = Flask(__name__)
-load_dotenv()
-api_key = os.getenv('API_KEY')
+
 
 @app.route('/')
 def home_page():
@@ -20,8 +19,10 @@ def character_page():
     """
     Displays the the character page for SWAPI
     """
-    number = random.randint(1, 88)
-    response = requests.get(f"https://swapi.py4e.com/api/people/{number}/")
+    character_id = request.args.get('character-id')
+    if not character_id:
+        character_id = '1'
+    response = requests.get(f"https://swapi.py4e.com/api/people/{character_id}/")
     data = response.json()
     context = {
     "character": data
@@ -35,7 +36,7 @@ def film_page():
     """
     Displays the film page for SWAPI
     """
-    character_id = request.args.get('character-id')
+    number = random.randint(1, 7)
     response = requests.get(f"https://swapi.py4e.com/api/films/{number}/")
     data = response.json()
     context = {
