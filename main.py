@@ -1,8 +1,12 @@
 import requests
+import os
+from dotenv import load_dotenv
 import json
 from flask import Flask, render_template, request, send_file
 import random
 app = Flask(__name__)
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 @app.route('/')
 def home_page():
@@ -31,7 +35,7 @@ def film_page():
     """
     Displays the film page for SWAPI
     """
-    number = random.randint(1, 7)
+    character_id = request.args.get('character-id')
     response = requests.get(f"https://swapi.py4e.com/api/films/{number}/")
     data = response.json()
     context = {
