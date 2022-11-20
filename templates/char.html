@@ -1,16 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<fieldset>
+  <legend>Character Search</legend>
+  <form action="/" method="GET">
+    <label for="character-search">
+      Type in a number for a Star Wars Character
+    </label>
+    <section id="input-section">
+      <input type="text" name="character-id" id="character-search">
+      <input type="submit" name="search-submit" value="Search">
+    </section>
+  </form>
+</fieldset>
+
 <section id = 'character_section'>
-    <a href="http://127.0.0.1:3000/char">
-          <button >Click here to Randomize a Character </button>
-    </a>
   <div id="display">
+    <h2>Here is the information for your Character: </h2>
     <p>Name: {{character.name}}</p>
     <p>Height: {{character.height}}</p>
     <p>Skin Color: {{character.skin_color}}</p>
     <p> Eye Color: {{character.eye_color}}</p>
     <p>Birth Year: {{character.birth_year}}</p>
     <p>Gender: {{character.gender}}</p>
-</section>
   </div>
+  <section>
+    <h3>List of films:</h3>
+    <ul class="information-box">
+      {% for film in films %}
+      <li>{{film}}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</section>
+
 {% endblock %}  
